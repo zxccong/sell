@@ -1,0 +1,9 @@
+Starting LoggerTest on PC-201901051310 with PID 22372 (started by Administrator in F:\AllOfMyStudy\sell)
+No active profile set, falling back to default profiles: default
+Initializing ExecutorService 'applicationTaskExecutor'
+Started LoggerTest in 3.9 seconds (JVM running for 5.155)
+info...
+name: zxc ,password: 123465
+name : zxc ,password: 123465
+error...
+Shutting down ExecutorService 'applicationTaskExecutor'
