@@ -40,7 +40,10 @@ public class BuyerProductController {
         List<ProductInfo> productInfoList = productService.findUpAll();
         //2.查询类目（一次性查询）
 //        //统计类目
-
+//        ArrayList<Integer> categoryTypeList = new ArrayList<>();
+//        for (ProductInfo  productInfo:productInfoList ) {
+//            categoryTypeList.add(productInfo.getCategoryType());
+//        }
         //jdk8新方法统计类目
         List<Integer> categoryTypeList = productInfoList.stream().map(e -> e.getCategoryType()).collect(Collectors.toList());
         List<ProductCategory> categoriesList = categoryService.findByCategoryTypeIn(categoryTypeList);

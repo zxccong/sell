@@ -36,6 +36,7 @@ public class OrderMasterRepositoryTest {
         Assert.assertNotNull(save);
     }
 
+    @Test
     public void findByBuyerOpenid(){
         PageRequest pageRequest = new PageRequest(0, 3);
         Page<OrderMaster> byBuyerOpenid = repository.findByBuyerOpenid(OPENID, pageRequest);

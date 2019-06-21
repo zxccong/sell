@@ -11,7 +11,7 @@ import java.util.Date;
 @Entity
 @Data
 @DynamicUpdate
-public class orderDetail {
+public class OrderDetail {
 
     @Id
     private String detailId;
