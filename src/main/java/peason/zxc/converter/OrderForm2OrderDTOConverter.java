@@ -2,22 +2,18 @@ package peason.zxc.converter;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.imooc.dataobject.OrderDetail;
-import com.imooc.dto.OrderDTO;
-import com.imooc.enums.ResultEnum;
-import com.imooc.exception.SellException;
-import com.imooc.form.OrderForm;
 import lombok.extern.slf4j.Slf4j;
 import peason.zxc.dataobject.OrderDetail;
 import peason.zxc.dto.OrderDto;
+import peason.zxc.enums.ResultEnum;
+import peason.zxc.exception.SellException;
 import peason.zxc.form.OrderForm;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by 廖师兄
- * 2017-06-18 23:41
+ * 输入参数转换为OrderDto
  */
 @Slf4j
 public class OrderForm2OrderDTOConverter {
