@@ -1,0 +1,9 @@
+2019-06-19 11:26:25.271  INFO 6868 --- [main] peason.zxc.LoggerTest                    : Starting LoggerTest on PC-201901051310 with PID 6868 (started by Administrator in F:\AllOfMyStudy\sell)
+2019-06-19 11:26:25.272  INFO 6868 --- [main] peason.zxc.LoggerTest                    : No active profile set, falling back to default profiles: default
+2019-06-19 11:26:28.128  INFO 6868 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-19 11:26:28.593  INFO 6868 --- [main] peason.zxc.LoggerTest                    : Started LoggerTest in 3.81 seconds (JVM running for 4.804)
+2019-06-19 11:26:28.847  INFO 6868 --- [main] peason.zxc.LoggerTest                    : info...
+2019-06-19 11:26:28.848  INFO 6868 --- [main] peason.zxc.LoggerTest                    : name: zxc ,password: 123465
+2019-06-19 11:26:28.848  INFO 6868 --- [main] peason.zxc.LoggerTest                    : name : zxc ,password: 123465
+2019-06-19 11:26:28.850 ERROR 6868 --- [main] peason.zxc.LoggerTest                    : error...
+2019-06-19 11:26:28.860  INFO 6868 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
