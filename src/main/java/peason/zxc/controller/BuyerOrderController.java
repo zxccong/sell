@@ -24,10 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by 廖师兄
- * 2017-06-18 23:27
- */
+
 @RestController
 @RequestMapping("/buyer/order")
 @Slf4j

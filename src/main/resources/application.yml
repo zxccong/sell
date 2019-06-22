@@ -12,3 +12,12 @@ myip: 10.10.86.130
 server:
   servlet:
     context-path: /sell
+wechat:
+  mpAppId: 123
+  mpAppSecret: 123
+
+projecturl:
+  wechatMpAuthorize: 123 #域名
+
+
+
