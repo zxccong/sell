@@ -20,7 +20,7 @@ public class ProductService {
     private ProductInfoRepository repository;
 
     public ProductInfo findOne(String productId){
-        return repository.findById(productId).get();
+        return repository.findOne(productId);
     }
 
     public Page<ProductInfo> findAll(Pageable pageable){

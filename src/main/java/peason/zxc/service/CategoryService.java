@@ -14,7 +14,7 @@ public class CategoryService {
     private ProductCategoryRepository repository;
 
     public ProductCategory findOne(Integer categoryId){
-        return repository.findById(categoryId).get();
+        return repository.findOne(categoryId);
     }
 
     public List<ProductCategory> findAll(){

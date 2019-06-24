@@ -8,16 +8,24 @@ spring:
     show-sql: true
   jackson:
     default-property-inclusion: non_null    #配置null不显示
+
+
+
 myip: 10.10.86.130
 server:
-  servlet:
     context-path: /sell
 wechat:
-  mpAppId: 123
-  mpAppSecret: 123
+  mpAppId: wx7dc00669e20b4f7e
+  mpAppSecret: 78721bdc7e63ef7a21e675d8be4685de
+  mchKey: 123
+  mchId: 123
+  keyPath: 123    #下载下来的
+  notifyUrl: 123
+
+
 
 projecturl:
-  wechatMpAuthorize: 123 #域名
+  wechatMpAuthorize: http://n53q4m.natappfree.cc #域名
 
 
 

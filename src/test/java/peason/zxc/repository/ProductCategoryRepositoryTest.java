@@ -28,8 +28,8 @@ public class ProductCategoryRepositoryTest {
      */
     @Test
     public void findOneTest(){
-        ProductCategory productCategory = repository.findById(1).get();
-        System.out.println(productCategory);
+//        ProductCategory productCategory = repository.findById(1).get();
+//        System.out.println(productCategory);
     }
 
     /**

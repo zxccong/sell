@@ -1,5 +1,6 @@
 package peason.zxc.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
@@ -7,6 +8,7 @@ import peason.zxc.dataobject.OrderDetail;
 import peason.zxc.enums.OrderStatusEnum;
 import peason.zxc.enums.PayStatusEnum;
 import peason.zxc.serializer.Date2LongSerializer;
+import peason.zxc.utils.EnumUtil;
 
 import javax.persistence.Id;
 import java.math.BigDecimal;
@@ -68,4 +70,14 @@ public class OrderDto {
 
    //@Transient      //数据库不映射
     private List<OrderDetail> orderDetailList ;
+
+    @JsonIgnore
+    public OrderStatusEnum getOrderStatusEnum() {
+        return EnumUtil.getByCode(orderStatus, OrderStatusEnum.class);
+    }
+
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum() {
+        return EnumUtil.getByCode(payStatus, PayStatusEnum.class);
+    }
 }

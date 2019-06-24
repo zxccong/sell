@@ -94,7 +94,7 @@ public class OrderService {
      * @return
      */
     public OrderDto findOne(String orderId){
-        OrderMaster orderMaster = orderMasterRepository.findById(orderId).get();
+        OrderMaster orderMaster = orderMasterRepository.findOne(orderId);
         if (orderMaster==null){
             throw new SellException(ResultEnum.ORDER_NOT_EXIST);
         }
@@ -117,6 +117,18 @@ public class OrderService {
      */
     public Page<OrderDto> findList(String buyerOpenid, Pageable pageable){
         Page<OrderMaster> orderMasterPage = orderMasterRepository.findByBuyerOpenid(buyerOpenid, pageable);
+        List<OrderDto> orderDtoList = OrderMaster2OrderDtoConverter.convert(orderMasterPage.getContent());
+        return new PageImpl<>(orderDtoList, pageable, orderMasterPage.getTotalPages());
+
+    }
+
+    /**
+     * 查询订单列表(后台管理系统)
+     * @param pageable
+     * @return
+     */
+    public Page<OrderDto> findList( Pageable pageable){
+        Page<OrderMaster> orderMasterPage = orderMasterRepository.findAll( pageable);
         List<OrderDto> orderDtoList = OrderMaster2OrderDtoConverter.convert(orderMasterPage.getContent());
         return new PageImpl<>(orderDtoList, pageable, orderMasterPage.getTotalPages());
 

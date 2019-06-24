@@ -17,16 +17,19 @@ public enum ResultEnum {
     ORDER_PAY_STATUS_ERROR(17,"订单支付状态不正确"),
     CART_EMPTY(18,"购物车为空"),
     ORDER_OWNER_ERROR(19,"订单不属于当前用户"),
-    WECHAT_MP_ERROR(20,"微信公众账号方面错误")
+    WECHAT_MP_ERROR(20,"微信公众账号方面错误"),
+    WXPAY_NOTIFY_MONEY_VERIFY_ERROR(21,"微信支付金额不统一"),
+    ORDER_CANCEL_SUCCESS(22,"订单取消异常"),
+    ORDER_FINISH_SUCCESS(23,"订单结束异常"),
 
     ;
 
     private Integer code;
 
-    private String mmessage;
+    private String message;
 
-    ResultEnum(Integer code, String mmessage) {
+    ResultEnum(Integer code, String message) {
         this.code = code;
-        this.mmessage = mmessage;
+        this.message = message;
     }
 }
