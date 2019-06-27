@@ -10,11 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import peason.zxc.config.ProjectUrlConfig;
 import peason.zxc.enums.ResultEnum;
 import peason.zxc.exception.SellException;
 
 import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/wechat")
@@ -55,10 +58,10 @@ public class WechatController {
         return "redirect:" + returnUrl + "?openid=" + openId;
     }
 
-    /*@GetMapping("/qrAuthorize")
+    @GetMapping("/qrAuthorize")
     public String qrAuthorize(@RequestParam("returnUrl") String returnUrl) {
         String url = projectUrlConfig.getWechatOpenAuthorize() + "/sell/wechat/qrUserInfo";
-        String redirectUrl = wxOpenService.buildQrConnectUrl(url, WxConsts.QRCONNECT_SCOPE_SNSAPI_LOGIN, URLEncoder.encode(returnUrl));
+        String redirectUrl = wxOpenService.buildQrConnectUrl(url, WxConsts.QrConnectScope.SNSAPI_LOGIN, URLEncoder.encode(returnUrl));
         return "redirect:" + redirectUrl;
     }
 
@@ -76,6 +79,15 @@ public class WechatController {
         String openId = wxMpOAuth2AccessToken.getOpenId();
 
         return "redirect:" + returnUrl + "?openid=" + openId;
-    }*/
+    }
+
+    @GetMapping("/toLogin")
+    public ModelAndView toLogin(){
+        return new ModelAndView("redirect:"
+                .concat(projectUrlConfig.getWechatOpenAuthorize())
+                .concat("/sell/index.html"));
+
+    }
+
 }
 

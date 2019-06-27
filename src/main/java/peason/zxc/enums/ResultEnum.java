@@ -19,9 +19,12 @@ public enum ResultEnum {
     ORDER_OWNER_ERROR(19,"订单不属于当前用户"),
     WECHAT_MP_ERROR(20,"微信公众账号方面错误"),
     WXPAY_NOTIFY_MONEY_VERIFY_ERROR(21,"微信支付金额不统一"),
-    ORDER_CANCEL_SUCCESS(22,"订单取消异常"),
-    ORDER_FINISH_SUCCESS(23,"订单结束异常"),
-
+    ORDER_CANCEL_SUCCESS(22,"订单取消成功"),
+    ORDER_FINISH_SUCCESS(23,"订单完结成功"),
+    PRODUCT_STATUS_ERROR(24,"更改商品状态 ，商品状态异常"),
+    LOGIN_FAIL(25,"登陆失败，登陆信息错误"),
+    LOGIN_PASSWORD_FAIL(30,"登陆失败，密码错误"),
+    LOGOUT_SUCCESS(26,"登出成功"),
     ;
 
     private Integer code;

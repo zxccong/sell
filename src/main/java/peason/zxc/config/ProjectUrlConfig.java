@@ -23,5 +23,6 @@ public class ProjectUrlConfig {
     /**
      * 点餐系统
      */
+
     public String sell;
 }

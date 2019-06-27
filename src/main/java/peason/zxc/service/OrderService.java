@@ -43,6 +43,9 @@ public class OrderService {
     @Autowired
     private OrderMasterRepository orderMasterRepository;
 
+    @Autowired
+    private WebSocket webSocket;
+
     /**
      * 创建订单
      * @param orderDto
@@ -85,6 +88,12 @@ public class OrderService {
 
         List<CartDto> cartDtoList = orderDto.getOrderDetailList().stream().map(e -> new CartDto(e.getProductId(), e.getProductQuantity())).collect(Collectors.toList());
         productService.decreaseStock(cartDtoList);
+
+        //todo 微信推送消息
+
+        //发送websocket消息
+        webSocket.sendMessage("有新订单");
+
         return orderDto;
     }
 
@@ -130,7 +139,7 @@ public class OrderService {
     public Page<OrderDto> findList( Pageable pageable){
         Page<OrderMaster> orderMasterPage = orderMasterRepository.findAll( pageable);
         List<OrderDto> orderDtoList = OrderMaster2OrderDtoConverter.convert(orderMasterPage.getContent());
-        return new PageImpl<>(orderDtoList, pageable, orderMasterPage.getTotalPages());
+        return new PageImpl<>(orderDtoList, pageable, orderMasterPage.getTotalElements());
 
     }
 

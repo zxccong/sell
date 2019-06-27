@@ -37,11 +37,13 @@ public class SellerOrderController {
                              Map<String, Object> map) {
         PageRequest request = new PageRequest(page - 1, size);
         Page<OrderDto> orderDTOPage = orderService.findList(request);
+
         map.put("orderDTOPage", orderDTOPage);
         map.put("currentPage", page);
+//        System.out.println("orderDTOPage = " + orderDTOPage);
         map.put("size", size);
 //        orderDTOPage.getTotalPages()
-        return new ModelAndView("order/list");
+        return new ModelAndView("order/list", map);
     }
 
     /**
@@ -62,6 +64,7 @@ public class SellerOrderController {
             map.put("url", "/sell/seller/order/list");
             return new ModelAndView("common/error", map);
         }
+        //todo 删除的时候传入之前所在的页码，大小，更好用户体验
 
         map.put("msg", ResultEnum.ORDER_CANCEL_SUCCESS.getMessage());
         map.put("url", "/sell/seller/order/list");
